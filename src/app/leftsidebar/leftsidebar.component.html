@@ -1,0 +1,21 @@
+<div class="ui list">
+  <div class="item" style="padding-left: 14px">
+    <div class="ui button huge" (click)="showOD()" [ngClass]="{'checked': ODSelected}">
+       多物体检测
+    </div>
+  </div>
+  <div class = "ui divider"></div>
+  <div class="item" style="padding-left: 14px">
+    <div class="ui button huge" (click)="showSS()" [ngClass]="{'checked': SSSelected}">
+       全语义分割
+    </div>
+  </div>
+  <div class = "ui divider"></div>
+  <div class="item" style="padding-left: 14px">
+    <div class="ui  button huge" (click)="showTL()" [ngClass]="{'checked': TLSelected}">
+      交通灯判别
+    </div>
+  </div>
+</div>
+
+

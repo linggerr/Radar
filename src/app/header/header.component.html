@@ -1,0 +1,64 @@
+<div class = "ui menu massive " style="width:100%">
+  <div class = "header item" style="padding-left: 65px;padding-right: 65px">
+    Driverless
+  </div>
+  <a class = "item big" (click)="showHome()">
+    主页
+  </a>
+  <a class = "item big" (click)="showImageDetection()">
+    图像检测
+  </a>
+  <a class = "item big" (click)="showMapBuild()">
+    地图构建
+  </a>
+  <a class = "item big" (click)="showRadarDetection()">
+    毫米波检测
+  </a>
+  <div [hidden]="ShowCurrentData"><!--浏览器不显示，定义的ShowCurrentData不相关-->
+  <a class="item big"  style="right: 40%;position:absolute;color:turquoise" > 当前加载数据为：{{currentData}}</a>
+  </div>
+ <div [hidden]="acitvate"  ><!--定义的activate元素不相关-->
+  <div class="ui huge right pointing dropdown icon button" title="请选择数据集" style="right:22%;position:absolute"  [ngClass]="{'disabled': BanButton}" >
+    <i class="tasks icon"></i>
+    <div class="menu">
+      <div class="ui left search icon input">
+        <i class="search icon"></i>
+        <input type="text" name="search" placeholder="Search issues...">
+      </div>
+      <div class="divider"></div>
+      <div class="header"><i class="tags icon"></i> Filter by tag </div>
+      <div class="item" (click)="SureDataset('cityscape')">
+        <div class="ui red empty circular label"></div>cityscape </div>
+      <div class="item" (click)="SureDataset('test')">
+        <div class="ui blue empty circular label" ></div>coco </div>
+      <div class="item" (click)="SureDataset('ImageNet')">
+        <div class="ui black empty circular label" ></div>ImageNet </div>
+    </div>
+  </div>
+ </div>
+  <!--关于数据源选择的下拉菜单-->
+  <div class="ui large floating dropdown labeled search icon button "  [ngClass]="{'disabled': BanButton}" style="right: 10%;position:absolute;">
+    <i class="cog icon"></i>
+    <span class="text">数据源选择</span>
+    <div class="menu">
+      <div class="item" (click)="showReal()">实时数据</div>
+      <div class="item" (click)="showHistory()">历史数据</div>
+    </div>
+  </div>
+  <div class="ui buttons" style="right: 0%;position:absolute;height: 52px;">
+    <button class="ui button" style="background: red" (click)="cancel()">Cancel</button>
+    <div class="or"></div>
+    <button class="ui positive button active" (click)="start()">Start</button>
+  </div>
+</div>
+
+
+
+<!-- <div class="ui segment">
+  <div class="ui dimmer" [ngClass]="{'active':false }" style="height: 100px">
+    <div class="ui indeterminate text loader">{{content}}</div>
+  </div>
+  <p></p>
+</div> -->
+
+

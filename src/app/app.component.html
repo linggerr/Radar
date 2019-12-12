@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class = "ui grid" style="padding-top: 14px;height:95vh">
+  <div class = "row" style=" padding-bottom: 0">
+
+    <div class = "two wide column">
+      <app-leftsidebar *ngIf="isImageDetection()"></app-leftsidebar><!--当isImageDetection返回true，跳转页面-->
+      <app-radar-left-bar *ngIf="isRadarDetection()"></app-radar-left-bar><!--当isRadarDetection返回true，跳转到雷达页面-->
+    </div>
+
+    <div class = "three wide column">
+      <app-image-detection *ngIf="isImageDetection()"></app-image-detection>
+      <app-radar-detection *ngIf="isRadarDetection() && isRS()"></app-radar-detection><!--点击“开始检测”显示2D动态车辆波纹图像-->
+    </div>
+
+    <div class = "eleven wide column">
+      <app-objectdetection style="background: #0d71bb" *ngIf="isImageDetection()&& isOD()"></app-objectdetection>
+      <app-semantis-right style="background: #0d71bb" *ngIf="isSS()"></app-semantis-right>
+    </div>
+
+      <!--毫米波雷达检测页面中的雷达信息按钮-->
+    <div class = "nine wide column">
+      <app-radar-info style="background: #0d71bb" *ngIf="isRadarDetection()&& isRI()"></app-radar-info>
+
+    </div>
+
+  </div>
+</div>
+
